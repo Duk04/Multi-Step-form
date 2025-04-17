@@ -36,9 +36,11 @@ export const DagImage = ({ label, onChange, name, value }) => {
     setPreviewLink("");
     setTempFile({});
     inputImageRef.current.value = "";
+    setIsDragging(false);
   };
 
   const handleDragLeave = () => setIsDragging(false);
+
   return (
     <div className="mt-2">
       <label>

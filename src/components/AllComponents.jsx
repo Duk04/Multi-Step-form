@@ -42,7 +42,6 @@ export const AllComponents = () => {
     }));
     setError((prevError) => ({ ...prevError, [name]: "" }));
   };
-  console.log({ formValue });
 
   const validateInputs = () => {
     const newErrors = {};
@@ -93,6 +92,11 @@ export const AllComponents = () => {
         "formData",
         JSON.stringify({ ...formValue, step: currentStep + 1 })
       );
+
+      if (currentStep === 2) {
+        localStorage.removeItem("formData");
+        setFormValue(initailFOrmValus);
+      }
     }
   };
 
